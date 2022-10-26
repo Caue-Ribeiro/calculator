@@ -1,0 +1,8 @@
+@use 'sass:math' as m;
+@function EM($size) {
+    @if m.is-unitless($size) {
+        @return m.div($size, 16) + em;
+    } @else {
+        @error 'It must not have unit attach';
+    }
+}
