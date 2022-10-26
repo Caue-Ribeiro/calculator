@@ -7,6 +7,6 @@
 -   Vanilla JS
 -   SASS
 
-Check it out here: [Calculator](https://caue-ribeiro.github.io/Calculator/)
+Check it out here: [Calculator](https://caue-ribeiro.github.io/calculator/)
 
 ![Calculator gif](/public/video/calculator.gif)
