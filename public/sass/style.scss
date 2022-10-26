@@ -1,0 +1,94 @@
+@use '_functions' as f;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+$font-color: hsl(0, 0%, 88%);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka one', sans-serif;
+}
+
+body {
+    background: hsl(37, 8%, 32%);
+    background: linear-gradient(
+        300deg,
+        hsla(286, 90%, 48%, 0.671) 29%,
+        hsl(31, 100%, 56%) 100%
+    );
+    background-size: f.EM(3000);
+    animation: animate-backgrd linear 5s infinite;
+}
+
+.grid__container {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, f.EM(80));
+    grid-template-rows: minmax(f.EM(50), auto) repeat(4, f.EM(80));
+
+    button {
+        font-size: f.EM(30);
+        outline: none;
+        border: 1px solid black;
+        background-color: hsla(0, 0%, 41%, 0.219);
+        color: hsl(0, 0%, 100%);
+        cursor: pointer;
+        filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.877));
+    }
+
+    button:hover {
+        background-color: hsla(0, 0%, 63%, 0.486);
+        color: $font-color;
+        transition: ease-in-out 0.3s;
+    }
+
+    .calc__operators {
+        background-color: hsla(39, 100%, 56%, 0.527);
+    }
+    .calc__operators:hover {
+        background-color: hsl(39, 99%, 40%);
+    }
+
+    .grid__btn__expand {
+        grid-column: span 2;
+    }
+
+    .calc__screen {
+        grid-column: 1 /-1;
+        background-color: hsla(138, 7%, 73%, 0.486);
+        border: 2px solid hsl(0, 0%, 0%);
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: space-around;
+        word-wrap: break-word;
+        word-break: break-all;
+        padding: 5px;
+
+        #screen__previous__operand {
+            font-size: f.EM(18);
+            color: hsl(0, 0%, 9%);
+        }
+
+        #screen__current__operand {
+            font-size: f.EM(28);
+        }
+    }
+}
+
+@keyframes animate-backgrd {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
